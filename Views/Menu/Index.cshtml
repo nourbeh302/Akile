@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "Menu";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+
+    <div class="grid-container">
+        @foreach (var item in Model)
+        {
+            <a class="nav-link text-dark" asp-area="" asp-controller="Menu" asp-action="Item" asp-route-id="@item.Id">
+                <div class="grid-item">
+                    <div>@item.Id</div>
+                    <div>@item.Name</div>
+                    <div>@item.Description</div>
+                    <div>@item.Price</div>
+                </div>
+            </a>
+        }
+    </div>
+    <a asp-controller="Menu" asp-action="Create" class="btn btn-primary">Create New</a>
+</div>
