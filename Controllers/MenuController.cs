@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Akile.Models;
-using Akile.Data;
+using Akile.Identity.Data;
 using Akile.Services;
 
 namespace Akile.Controllers;
