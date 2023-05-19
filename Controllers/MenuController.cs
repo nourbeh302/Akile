@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Akile.Models;
 using Akile.Identity.Data;
 using Akile.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Akile.Controllers;
 
@@ -28,6 +29,7 @@ public class MenuController : Controller
         return View(item);
     }
 
+    [Authorize]
     [HttpGet]
     public IActionResult Create()
     {
