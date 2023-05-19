@@ -20,22 +20,3 @@ html {
 body {
   margin-bottom: 60px;
 }
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  grid-gap: 32px;
-  margin-top: 64px;
-}
-
-.grid-item {
-  padding: 32px;
-  box-shadow: 0 0 16px rgba(128, 128, 128, 0.5);
-  text-align: left;
-  transition: all 375ms ease-in;
-}
-
-.grid-item:hover {
-  scale: 104%;
-  box-shadow: 0 0 32px rgba(128, 128, 128, 0.4);
-}

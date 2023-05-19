@@ -1,12 +1,15 @@
 using Akile.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Akile.Data;
 
-public class DataContext : DbContext
+public class DataContext : IdentityDbContext
 {
     public DataContext(DbContextOptions<DataContext> options) : base(options) { }
     public DbSet<Item> Items => Set<Item>();
+    public DbSet<Restaurant> Restaurants => Set<Restaurant>();
+    public DbSet<Order> Orders => Set<Order>();
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);

@@ -1,0 +1,22 @@
+.btn-submit[b-2wuovij47a] {
+    margin-block: 32px;
+}
+
+.grid-container[b-2wuovij47a] {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 32px;
+    margin-top: 32px;
+}
+
+.grid-item[b-2wuovij47a] {
+    padding: 32px;
+    box-shadow: 0 0 16px rgba(128, 128, 128, 0.5);
+    text-align: left;
+    transition: all 375ms ease-in;
+}
+
+.grid-item:hover[b-2wuovij47a] {
+    scale: 104%;
+    box-shadow: 0 0 32px rgba(128, 128, 128, 0.4);
+}

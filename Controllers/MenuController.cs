@@ -22,9 +22,9 @@ public class MenuController : Controller
         return View(_service.List());
     }
 
-    public IActionResult Item(int Id)
+    public IActionResult Details(int Id)
     {
-        var item = _service.Find(i => i.Id == Id);
+        var item = _service.Find(i => i.Id == Id).FirstOrDefault();
         return View(item);
     }
 

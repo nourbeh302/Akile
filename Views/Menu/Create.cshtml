@@ -1,16 +1,19 @@
 @model Item
+
 <form asp-action="Create" method="post">
-    <div>
-        <label asp-for="Name">Name:</label>
-        <input asp-for="Name" />
-    </div>
-    <div>
-        <label asp-for="Description">Description:</label>
-        <input asp-for="Description" />
-    </div>
-    <div>
-        <label asp-for="Price">Price:</label>
-        <input asp-for="Price" />
-    </div>
-    <button type="submit">Add Item</button>
+    <table>
+        <tr>
+            <td><label asp-for="Name">Name:</label></td>
+            <td><input asp-for="Name" autocomplete="off" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Description">Description:</label></td>
+            <td><input asp-for="Description" autocomplete="off" /></td>
+        </tr>
+        <tr>
+            <td><label asp-for="Price">Price:</label></td>
+            <td><input asp-for="Price" autocomplete="off" /></td>
+        </tr>
+    </table>
+    <button type="submit" class="mt-5 btn btn-info">Add Item</button>
 </form>

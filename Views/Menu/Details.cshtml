@@ -1,0 +1,18 @@
+@model Item
+
+<h2>Item Details</h2>
+
+<div>
+    <dl>
+        <dt>Id:</dt>
+        <dd>@Model.Id</dd>
+        <dt>Name:</dt>
+        <dd>@Model.Name</dd>
+        <dt>Description:</dt>
+        <dd>@Model.Description</dd>
+        <dt>Price:</dt>
+        <dd>@Model.Price</dd>
+    </dl>
+</div>
+
+<a asp-action="Index" class="btn btn-info">Go back</a>

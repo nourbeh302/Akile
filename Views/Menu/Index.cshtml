@@ -5,10 +5,12 @@
 <div class="text-center">
     <h1 class="display-4">@ViewData["Title"]</h1>
 
+    <a asp-controller="Menu" asp-action="Create" class="btn btn-primary btn-submit">Create New</a>
+
     <div class="grid-container">
         @foreach (var item in Model)
         {
-            <a class="nav-link text-dark" asp-area="" asp-controller="Menu" asp-action="Item" asp-route-id="@item.Id">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Menu" asp-action="Details" asp-route-id="@item.Id">
                 <div class="grid-item">
                     <div>@item.Id</div>
                     <div>@item.Name</div>
@@ -18,5 +20,4 @@
             </a>
         }
     </div>
-    <a asp-controller="Menu" asp-action="Create" class="btn btn-primary">Create New</a>
 </div>

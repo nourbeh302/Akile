@@ -1,5 +1,6 @@
 using Akile.Data;
 using Akile.Services;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,10 @@ builder.Services.AddDbContext<DataContext>(options =>
 
 builder.Services.AddScoped<DbContext, DataContext>();
 builder.Services.AddScoped(typeof(IService<,>), typeof(MenuService<,>));
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<DataContext>()
+    .AddDefaultTokenProviders();
 
 var app = builder.Build();
 
@@ -29,6 +34,7 @@ app.UseHttpsRedirection();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

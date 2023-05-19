@@ -1,3 +1,26 @@
+/* _content/Akile/Views/Menu/Index.cshtml.rz.scp.css */
+.btn-submit[b-2wuovij47a] {
+    margin-block: 32px;
+}
+
+.grid-container[b-2wuovij47a] {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 32px;
+    margin-top: 32px;
+}
+
+.grid-item[b-2wuovij47a] {
+    padding: 32px;
+    box-shadow: 0 0 16px rgba(128, 128, 128, 0.5);
+    text-align: left;
+    transition: all 375ms ease-in;
+}
+
+.grid-item:hover[b-2wuovij47a] {
+    scale: 104%;
+    box-shadow: 0 0 32px rgba(128, 128, 128, 0.4);
+}
 /* _content/Akile/Views/Shared/_Layout.cshtml.rz.scp.css */
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
