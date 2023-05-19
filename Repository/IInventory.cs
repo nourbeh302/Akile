@@ -1,8 +1,8 @@
 using System.Linq.Expressions;
 
-namespace Akile.Services;
+namespace Akile.Repository;
 
-public interface IService<T, K> where T : class
+public interface IInventory<T, K> where T : class
 {
     IEnumerable<T> List();
     public IQueryable<T> Find(Expression<Func<T, bool>> predicate, bool includeSoftDeleted = false, params Expression<Func<T, object>>[] includes);

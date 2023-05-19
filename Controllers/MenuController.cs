@@ -1,8 +1,6 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Akile.Models;
-using Akile.Identity.Data;
-using Akile.Services;
+using Akile.Repository;
 using Microsoft.AspNetCore.Authorization;
 
 namespace Akile.Controllers;
@@ -10,22 +8,22 @@ namespace Akile.Controllers;
 public class MenuController : Controller
 {
     private readonly ILogger<MenuController> _logger;
-    private readonly IService<Item, long> _service;
+    private readonly IInventory<Item, long> _inventory;
 
-    public MenuController(ILogger<MenuController> logger, IService<Item, long> service)
+    public MenuController(ILogger<MenuController> logger, IInventory<Item, long> inventory)
     {
         _logger = logger;
-        _service = service;
+        _inventory = inventory;
     }
 
     public IActionResult Index()
     {
-        return View(_service.List());
+        return View(_inventory.List());
     }
 
     public IActionResult Details(int Id)
     {
-        var item = _service.Find(i => i.Id == Id).FirstOrDefault();
+        var item = _inventory.Find(i => i.Id == Id).FirstOrDefault();
         return View(item);
     }
 
@@ -41,7 +39,7 @@ public class MenuController : Controller
     {
         if (ModelState.IsValid)
         {
-            _service.Create(item);
+            _inventory.Create(item);
             return RedirectToAction("Index");
         }
         return View();

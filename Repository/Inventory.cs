@@ -1,13 +1,13 @@
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 
-namespace Akile.Services;
+namespace Akile.Repository;
 
-public class MenuService<T, K> : IService<T, K> where T : class
+public class Inventory<T, K> : IInventory<T, K> where T : class
 {
     private DbContext _context { get; set; }
     private DbSet<T> _entity;
-    public MenuService(DbContext context)
+    public Inventory(DbContext context)
     {
         _context = context;
         _entity = _context.Set<T>();

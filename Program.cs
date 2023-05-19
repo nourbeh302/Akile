@@ -1,5 +1,5 @@
 using Akile.Identity.Data;
-using Akile.Services;
+using Akile.Repository;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,7 +17,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddDefaultTokenProviders();
 
 builder.Services.AddScoped<DbContext, DataContext>();
-builder.Services.AddScoped(typeof(IService<,>), typeof(MenuService<,>));
+builder.Services.AddScoped(typeof(IInventory<,>), typeof(Inventory<,>));
 
 var app = builder.Build();
 
