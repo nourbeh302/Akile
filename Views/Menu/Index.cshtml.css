@@ -1,4 +1,4 @@
-.btn-submit {
+.btn-submit:first-child {
     margin-block: 32px;
 }
 

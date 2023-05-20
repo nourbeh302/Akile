@@ -2,3 +2,7 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+$("#add-to-cart").click(function (e) {
+    e.preventDefault();
+    console.log("Clicked");
+});
